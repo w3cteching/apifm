@@ -1,7 +1,4 @@
 const WXAPI = require('apifm-wxapi')
-
-
-
 //app.js
 App({
   onLaunch: function () {

@@ -1,6 +1,4 @@
-const wxapi=require('apifm-wxapi')
-
-
+const { getGoodsList, addGoodsFav, getGoodsCate }=require('../../http/api.js');
 
 //index.js
 //获取应用实例
@@ -57,78 +55,20 @@ Page({
   },
   getApi() {
 
-    wx.getUserInfo({
-      success(res) {
-        console.log(' wx.getUserInfo:', res)
-      }
-    })
+    getGoodsList().then(res=>{
+
+      console.log('终于等到你',res)
 
 
-    // wx.request({
-    //   url: 'https://api.it120.cc/hjl/banner/list',
-    //   data:{
+    });
 
-    //     type:'index'
+   //测试添加收藏功能
+  // let goodsId ="395742"  //通常是通过传参接收的，我这里写死了
+    //let token ="a9467405-35f3-4404-9212-2760845e6b5e"
 
-    //   },
-    //   success(res) {
-    //     console.log(res)
-    //   }
-    // })
+   // addGoodsFav(goodsId,token)
 
-    // wx.request({
-    //   url: 'https://api.it120.cc/hjl/shop/goods/list',
-    //   success(res) {
-    //     console.log(res)
-    //   }
-    // })
-
-
-    // wxapi.goods().then(res=>{
-
-    //   console.log('wxapi.goods"',res)
-    // })
-
-    // wxapi.banners({
-    //   type:'index'
-    // }).then(res=>{
-
-    //     console.log('banner图数据：',res);
-
-    // })
-
-    //  wx.login({
-    //    success(res) {
-    //      console.log('wx.login:',res)
-    //      let {code}=res;
-    //       wx.request({
-    //         url: 'https://api.it120.cc/hjl/user/wxapp/login',
-    //         data:{
-    //           code
-    //         },
-    //         header:{
-    //           'content-type':' application/x-www-form-urlencoded'
-    //         },
-    //         method:'POST',
-    //         success(result) {
-    //           console.log('登录返回',result)
-    //         }
-    //       })
-
-    //    }
-    //  })
-
-
-    
-      // wx.checkSession({
-      //   success(res) {
-      //     console.log('checkSession：',res)
-      //   },
-      //   fail(error) {
-      //     console.log(error)
-      //   }
-
-      // })
+    //getGoodsCate();
 
   },
   getUser(e) {
