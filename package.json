@@ -1,0 +1,15 @@
+{
+  "name": "tstz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "haojinli",
+  "license": "MIT",
+  "dependencies": {
+    "apifm-wxapi": "^3.8.0"
+  }
+}
